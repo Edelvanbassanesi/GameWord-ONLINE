@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header style="text-align:center; margin-top:32px; margin-bottom:32px;">
+        <h1 style="
+            color: #ffd700;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 12px #222c44;
+            margin-bottom: 8px;
+        ">
+            🕹️ Gameword Online <span style="color:#fff; font-size:1.3rem; font-weight:400;">| Carrinho de Compras</span>
+        </h1>
+        <hr style="border: none; border-top: 2px solid #ffd700; width: 60px; margin: 0 auto;">
+    </header>
+
+    <div id="produtos">
+        <div class="produto">
+            <span>Red Dead Redemption 2</span> - <span>R$ 280,00</span>
+            <button onclick="adicionarAoCarrinho('Red Dead Redemption 2', 280)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>The Last of Us 2</span> - <span>R$ 200,00</span>
+            <button onclick="adicionarAoCarrinho('The Last of Us 2', 200)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>Horizon Forbidden West</span> - <span>R$ 130,00</span>
+            <button onclick="adicionarAoCarrinho('Horizon Forbidden West', 130)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>Spider-Man 2</span> - <span>R$ 250,00</span>
+            <button onclick="adicionarAoCarrinho('Spider-Man 2', 250)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>God of War 3</span> - <span>R$ 150,00</span>
+            <button onclick="adicionarAoCarrinho('God of War 3', 150)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>Red Dead Redemption</span> - <span>R$ 120,00</span>
+            <button onclick="adicionarAoCarrinho('Red Dead Redemption', 120)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>The Last of Us</span> - <span>R$ 180,00</span>
+            <button onclick="adicionarAoCarrinho('The Last of Us', 180)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>Farming Simulator 25</span> - <span>R$ 160,00</span>
+            <button onclick="adicionarAoCarrinho('Farming Simulator 25', 160)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>7 Days to Die</span> - <span>R$ 90,00</span>
+            <button onclick="adicionarAoCarrinho('7 Days to Die', 90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>DayZ</span> - <span>R$ 110,00</span>
+            <button onclick="adicionarAoCarrinho('DayZ', 110)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <span>R.E.P.O.</span> - <span>R$ 70,00</span>
+            <button onclick="adicionarAoCarrinho('R.E.P.O.', 70)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <div class="carrinho">
+        <h2>Seu Carrinho</h2>
+        <table id="tabela-carrinho">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Subtotal</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Itens do carrinho aqui -->
+            </tbody>
+        </table>
+        <p class="total">Total: R$ <span id="total">0,00</span></p>
+    </div>
+
+    <a href="../index.html" class="btn-voltar" style="
+        display: block;
+        width: fit-content;
+        margin: 32px auto 0 auto;
+        background: #29345a;
+        color: #ffd700;
+        border: none;
+        border-radius: 12px;
+        padding: 12px 32px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 8px rgba(34,44,68,0.10);
+    ">&larr; Voltar para a loja</a>
+
+    <script>
+        let carrinho = [];
+
+        function adicionarAoCarrinho(nome, preco) {
+            const index = carrinho.findIndex(item => item.nome === nome);
+            if (index > -1) {
+                carrinho[index].quantidade += 1;
+            } else {
+                carrinho.push({ nome, preco, quantidade: 1 });
+            }
+            atualizarCarrinho();
+        }
+
+        function removerDoCarrinho(nome) {
+            carrinho = carrinho.filter(item => item.nome !== nome);
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const tbody = document.querySelector('#tabela-carrinho tbody');
+            tbody.innerHTML = '';
+            let total = 0;
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.nome}</td>
+                    <td>R$ ${item.preco.toFixed(2)}</td>
+                    <td>${item.quantidade}</td>
+                    <td>R$ ${subtotal.toFixed(2)}</td>
+                    <td><button onclick="removerDoCarrinho('${item.nome}')">Remover</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

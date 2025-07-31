@@ -1,0 +1,492 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181818;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.titlep1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    letter-spacing: 2px;
+}
+
+.titlep2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 6px;
+    letter-spacing: 1px;
+}
+
+.titlep1,
+.titlep2 {
+    margin: 0;
+    padding: 0;
+}
+
+.titlep1:hover,
+.titlep2:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #000000 0%, #012158 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ffd700;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #750400;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active:hover,
+.nav-link.active:focus {
+    color: #750400;
+}
+
+.background-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* Remove o espaço entre as imagens */
+}
+
+.background-img img {
+    width: 50vw;         /* Cada imagem ocupa metade da largura da tela */
+    max-width: none;     /* Remove limite de largura */
+    border-radius: 0;    /* Remove bordas arredondadas */
+    box-shadow: none;    /* Remove sombra */
+    margin: 0;           /* Remove margens */
+    padding: 0;          /* Remove padding */
+    display: block;
+}
+
+.img-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 100vw;
+    height: 60vh; /* Ajuste a altura como preferir */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+}
+
+.img-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #38c0a9; /* cor do texto */
+    font-size: 4vw;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow:
+        0 4px 24px #000,   /* sombra ampla preta */
+        0 1px 2px #222,    /* sombra curta escura */
+        2px 2px 8px #000,  /* sombra lateral */
+        0 0 10px #012158;  /* brilho azul escuro */
+    z-index: 2;
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+}
+
+.img-text2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #d8cd2e;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 0 4px 24px #000, 0 1px 2px #222;
+    z-index: 2;
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+    text-shadow:
+        0 4px 24px #000,   /* sombra ampla preta */
+        0 1px 2px #222,    /* sombra curta escura */
+        2px 2px 8px #000,  /* sombra lateral */
+        0 0 10px #012158;  /* brilho azul escuro */
+}
+
+/* Destaques em grid ordenado */
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 32px 5vw 0 5vw;
+    background: transparent;
+    margin: 0;
+}
+
+.destaque-item {
+    background: #222c44;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 10px 12px 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 0;
+    width: 100%;
+    max-width: 300px;
+    height: 340px;
+    margin: 0 auto;
+}
+
+.destaque-item:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+}
+
+.destaque-item img {
+    width: 140px;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    display: block;
+    max-width: 100%;
+}
+
+.destaque-item h3, .numeracao {
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.search-container input[type="text"] {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 1rem;
+    background: #222c44;
+    color: #fff;
+    transition: box-shadow 0.2s;
+}
+
+.search-container input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #ffd700;
+}
+
+.search-container button[type="submit"] {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: linear-gradient(90deg, #ffd700 0%, #ffb300 100%);
+    color: #222c44;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-left: -4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.search-container button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ffb300 0%, #ffd700 100%);
+    color: #000;
+}
+.destaque-header{
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Centralizado */
+    padding: 0; /* Corrigido */
+}
+
+.compra-destaque1 {
+    padding: 10px 28px;
+    background: linear-gradient(90deg, #ffd700 0%, #ffb300 100%);
+    color: #222c44;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: auto; /* Fixa o botão na base do card */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.compra-destaque1:hover {
+    background: linear-gradient(90deg, #ffb300 0%, #ffd700 100%);
+    color: #000;
+    transform: scale(1.05);
+}
+
+.jogos-header {
+    color: #ffd700;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 30px 0 10px 0;
+    text-align: center;
+}
+
+.jogos-barra {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    overflow-x: auto;
+    padding: 24px 10px 24px 10px;
+    background: transparent;
+    margin-bottom: 40px;
+}
+
+.jogo-item {
+    background: #181818;
+    border-radius: 16px;
+    box-shadow: 10px 2px 12px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 170px;
+    max-width: 170px;
+    padding: 18px 12px 14px 12px;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.jogo-item img {
+    width: 150px;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+    display: block;
+}
+
+.jogo-item h4 {
+    color: #ffd700;
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.jogo-item .compra-destaque1 {
+    margin-top: auto;
+    padding: 8px 0;
+    width: 110%;
+    background: linear-gradient(90deg, #ffd700 60%, #ffb300 100%);
+    color: #222c44;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.jogo-item .compra-destaque1:hover {
+    background: linear-gradient(90deg, #ffb300 0%, #ffd700 100%);
+    color: #000;
+    transform: scale(1.04);
+}
+
+.jogo-item:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(255,215,0,0.15);
+}
+
+.banner-breve {
+    width: 100%;
+    height: 290px;
+    background: #181818;
+    border-radius: 18px;
+    margin: 40px 0 30px 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.banner-titulo {
+    color: #ffd700;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 12px #000, 0 1px 2px #222;
+    z-index: 2;
+    margin-top: 24px; /* Espaço do topo */
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+@keyframes bannerZoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03); /* Zoom menor para menos desfoque */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 180%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 1; /* Deixe a imagem totalmente visível */
+    filter: brightness(0.); /* Escurece sem perder nitidez */
+    animation: bannerZoom 8s ease-in-out infinite;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 10px;
+    }
+    .nav-links {
+        gap: 16px;
+        margin-top: 10px;
+    }
+    .background-img {
+        flex-direction: column;
+    }
+    .background-img img {
+        width: 100vw;
+    }
+    .img-container {
+        flex-direction: column;
+        height: 60vw;
+    }
+    .img-container img {
+        width: 100%;
+        height: 50vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .destaques {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    .jogo-item {
+        min-width: 130px;
+        max-width: 130px;
+        padding: 10px 4px;
+    }
+    .jogo-item img {
+        width: 80px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 600px) {
+    .destaques {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 24px 2vw 0 2vw;
+    }
+    .destaque-item img {
+        max-width: 90vw;
+        width: 100%;
+        height: auto;
+    }
+    .destaque-item {
+        max-width: 98vw;
+        height: auto;
+    }
+    .img-container {
+        height: auto;
+    }
+    .img-container img {
+        height: 40vw;
+    }
+}

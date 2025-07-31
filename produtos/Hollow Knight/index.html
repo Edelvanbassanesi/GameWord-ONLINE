@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Hollow Knight</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+   
+    <div class="produto-container">
+        <img class="produto-img" src="https://preview.redd.it/real-talk-ive-never-noticed-how-good-the-official-cover-art-v0-28yg5u0xdarc1.jpg?width=274&format=pjpg&auto=webp&s=8011658e80a33edcc3966c1b6696d1c67c81013a" alt="Hollow Knight">
+        <div class="produto-info">
+            <h1 class="produto-nome">Hollow Knight</h1>
+            <div class="produto-descricao">
+                <p>Hollow Knight é um jogo de ação e aventura desenvolvido pela Team Cherry. Lançado em 2017, o jogo se passa em Hallownest, um vasto reino subterrâneo habitado por insetos e criaturas estranhas. Os jogadores assumem o papel de um cavaleiro sem nome que explora esse mundo, enfrentando inimigos desafiadores e descobrindo segredos ocultos.</p>
+            </div>
+            <h1 class="produto-nome preco-destaque">R$ 300</h1>
+            <div class="produto-botoes">
+                <button type="button">Adicionar aos Favoritos</button>
+                <button  type="button">Adicionar ao Carrinho</button>
+                <button type="button" onclick="mostrarChave()">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-container">
+        <div class="carrossel-titulo">Imagens do Jogo</div>
+        <div class="carrossel-fotos">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_5384f9f8b96a0b9934b2bc35a4058376211636d2.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 1">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_d5b6edd94e77ba6db31c44d8a3c09d807ab27751.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 2">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_a81e4231cc8d55f58b51a4a938898af46503cae5.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 3">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_62e10cf506d461e11e050457b08aa0e2a1c078d0.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 4">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_bd76bd88bc5334ee56ae3d5f0d8dec4455e8e3b8.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 5">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_33a645903d6dd9beec39f272a3daf57174a6cc26.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 6">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_47f3523dbea462aff2ca4bc9f605faaf80a792b2.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 7">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_92c7e8f34c00bdb455070ecdd5b746f0d2f6d808.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 8">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/ss_f1f594e1057a124d289a5905b53b5a0f820982c0.600x338.jpg?t=1695270428" alt="Hollow Knight - Cena 9">
+        </div>
+    </div>
+    <a href="../../index.html" class="btn-voltar-alt">← Voltar</a>
+
+    <div id="modal-chave" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(24,28,43,0.97); align-items:center; justify-content:center;">
+        <div style="background:#222c44; border-radius:18px; box-shadow:0 4px 24px #0008; padding:40px 32px; text-align:center; max-width:90vw;">
+            <h2 style="color:#ffd700; margin-bottom:18px;">Aqui está sua chave de acesso ao jogo</h2>
+            <div id="codigo-chave" style="font-size:2rem; color:#fff; background:#29345a; border-radius:12px; padding:18px 32px; letter-spacing:3px; font-family:monospace; margin-bottom:24px;"></div>
+            <button onclick="fecharModal()" style="background:#ffd700; color:#222c44; border:none; border-radius:10px; padding:10px 32px; font-weight:bold; font-size:1.1rem; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+    <script>
+        function gerarChaveAleatoria() {
+            // Exemplo de chave: 5 blocos de 5 caracteres alfanuméricos
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let chave = [];
+            for (let i = 0; i < 5; i++) {
+                let bloco = "";
+                for (let j = 0; j < 5; j++) {
+                    bloco += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                chave.push(bloco);
+            }
+            return chave.join("-");
+        }
+
+        function mostrarChave() {
+            document.getElementById('modal-chave').style.display = 'flex';
+            document.getElementById('codigo-chave').textContent = gerarChaveAleatoria();
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-chave').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

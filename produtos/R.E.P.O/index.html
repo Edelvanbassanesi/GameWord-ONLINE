@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>R.E.P.O</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+   
+    <div class="produto-container">
+        <img class="produto-img" src="https://store-images.s-microsoft.com/image/apps.10491.14346543607136639.d932bf87-6edc-4da6-bbd5-c944ad33bc0d.f78757c0-6542-410f-a0cc-52fc592d79f1" alt="R.E.P.O">
+        <div class="produto-info">
+            <h1 class="produto-nome">R.E.P.O</h1>
+            <div class="produto-descricao">
+                <p>R.E.P.O é um jogo de ação desenvolvido pela Kojima Productions e publicado pela Sony Interactive Entertainment. É a sequência de <em>Death Stranding</em> e foi escrito, produzido e dirigido por Hideo Kojima. O jogo promete uma experiência cinematográfica e inovadora, explorando temas de conexão e sobrevivência em um mundo pós-apocalíptico.</p>
+            </div>
+            <h1 class="produto-nome preco-destaque">R$ 300</h1>
+            <div class="produto-botoes">
+                <button type="button">Adicionar aos Favoritos</button>
+                <button  type="button">Adicionar ao Carrinho</button>
+                <button type="button" onclick="mostrarChave()">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-container">
+        <div class="carrossel-titulo">Imagens do Jogo</div>
+        <div class="carrossel-fotos">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_af7d8d6302d543d89019bad49ea853a970bb82de.600x338.jpg?t=1750949552" alt="R.E.P.O - Cena 1">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_e6babaab52581f81df91e50768cee6a9334ef6ec.600x338.jpg?t=1750949552" alt="R.E.P.O - Cena 2">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_a66715d57329c456d91aeb11fbd406e7d8c5dbc7.600x338.jpg?t=1750949552" alt="R.E.P.O - Cena 3">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_cd332c2299810a65c6aee61c04750197a919692a.600x338.jpg?t=1750949552" alt="R.E.P.O - Cena 4">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_e4dc1bc0ada8fb7cb164b3ac37be82f51aae5627.600x338.jpg?t=1750949552" alt="R.E.P.O - Cena 5">
+        </div>
+    </div>
+    <a href="../../index.html" class="btn-voltar-alt">← Voltar</a>
+
+    <div id="modal-chave" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(24,28,43,0.97); align-items:center; justify-content:center;">
+        <div style="background:#222c44; border-radius:18px; box-shadow:0 4px 24px #0008; padding:40px 32px; text-align:center; max-width:90vw;">
+            <h2 style="color:#ffd700; margin-bottom:18px;">Aqui está sua chave de acesso ao jogo</h2>
+            <div id="codigo-chave" style="font-size:2rem; color:#fff; background:#29345a; border-radius:12px; padding:18px 32px; letter-spacing:3px; font-family:monospace; margin-bottom:24px;"></div>
+            <button onclick="fecharModal()" style="background:#ffd700; color:#222c44; border:none; border-radius:10px; padding:10px 32px; font-weight:bold; font-size:1.1rem; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+    <script>
+        function gerarChaveAleatoria() {
+            // Exemplo de chave: 5 blocos de 5 caracteres alfanuméricos
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let chave = [];
+            for (let i = 0; i < 5; i++) {
+                let bloco = "";
+                for (let j = 0; j < 5; j++) {
+                    bloco += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                chave.push(bloco);
+            }
+            return chave.join("-");
+        }
+
+        function mostrarChave() {
+            document.getElementById('modal-chave').style.display = 'flex';
+            document.getElementById('codigo-chave').textContent = gerarChaveAleatoria();
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-chave').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
