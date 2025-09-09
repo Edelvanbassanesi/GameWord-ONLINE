@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Red Dead Redemption</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+   
+    <div class="produto-container">
+        <img class="produto-img" src="https://upload.wikimedia.org/wikipedia/pt/f/f3/Red_Dead_Redemption_capa.png" alt="Red Dead Redemption">
+        <div class="produto-info">
+            <h1 class="produto-nome">Red Dead Redemption</h1>
+            <div class="produto-descricao">
+                <p>Red Dead Redemption é um jogo de ação e aventura desenvolvido pela Rockstar Games. Lançado em 2010, o jogo se passa no Velho Oeste americano e segue a história de John Marston, um ex-foragido que busca redenção enquanto enfrenta desafios e inimigos em um mundo aberto e imersivo.</p>
+            </div>
+            <h1 class="produto-nome preco-destaque">R$ 200</h1>
+            <div class="produto-botoes">
+                <button type="button">Adicionar aos Favoritos</button>
+                <button  type="button">Adicionar ao Carrinho</button>
+                <button type="button" onclick="mostrarChave()">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-container">
+        <div class="carrossel-titulo">Imagens do Jogo</div>
+        <div class="carrossel-fotos">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_ba2c07c5db3da423ea658a49dd7a1aef30cdd43f.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 1">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_b44b734bf7ffdb7f6c4b5b3d1001f31f8eee01fc.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 2">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_05772b62ff72903c917ed271ee31fb540a334325.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 3">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_6577ffb3592613a13366aa3680d23578dd9099a2.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 4">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_8d45239f5f6ed57bcf7a3b6bf7f5b23fa7d76a57.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 5">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_c9731b7e8e20d342786d47955bb55cecb0d163d7.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 6">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_5dfb3b435eb75fb5546a1f0aeb64b34e7feb4dea.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 7">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_5504aba34531a564f15b3345ae96464bcdf36298.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 8">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2668510/ss_732808f29f7dcfa86d0bf42548f9b647a430fb73.600x338.jpg?t=1741118459" alt="Red Dead Redemption - Cena 9">
+        </div>
+    </div>
+    <a href="../../index.html" class="btn-voltar-alt">← Voltar</a>
+
+    <div id="modal-chave" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(24,28,43,0.97); align-items:center; justify-content:center;">
+        <div style="background:#222c44; border-radius:18px; box-shadow:0 4px 24px #0008; padding:40px 32px; text-align:center; max-width:90vw;">
+            <h2 style="color:#ffd700; margin-bottom:18px;">Aqui está sua chave de acesso ao jogo</h2>
+            <div id="codigo-chave" style="font-size:2rem; color:#fff; background:#29345a; border-radius:12px; padding:18px 32px; letter-spacing:3px; font-family:monospace; margin-bottom:24px;"></div>
+            <button onclick="fecharModal()" style="background:#ffd700; color:#222c44; border:none; border-radius:10px; padding:10px 32px; font-weight:bold; font-size:1.1rem; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+    <script>
+        function gerarChaveAleatoria() {
+            // Exemplo de chave: 5 blocos de 5 caracteres alfanuméricos
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let chave = [];
+            for (let i = 0; i < 5; i++) {
+                let bloco = "";
+                for (let j = 0; j < 5; j++) {
+                    bloco += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                chave.push(bloco);
+            }
+            return chave.join("-");
+        }
+
+        function mostrarChave() {
+            document.getElementById('modal-chave').style.display = 'flex';
+            document.getElementById('codigo-chave').textContent = gerarChaveAleatoria();
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-chave').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

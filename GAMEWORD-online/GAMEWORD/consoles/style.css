@@ -1,0 +1,140 @@
+body {
+    background: linear-gradient(135deg, #2a5298 0%, #010c20 100%);
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffd700;
+}
+
+h1 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-align: center;
+}
+
+.console-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 por linha */
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.console-item {
+    background: #050024;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 420px;
+    max-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.console-item img {
+    width: 200px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.console-item h2 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.console-item p {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.console-item button {
+    background: linear-gradient(90deg, #ffd700 60%, #ffb300 100%);
+    color: #222c44;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 24px;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.console-item button:hover {
+    background: linear-gradient(90deg, #ffb300 0%, #ffd700 100%);
+    color: #000;
+    transform: scale(1.04);
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    background-color: #010c20;
+    border-radius: 4px;
+    margin-top: none;
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(255,215,0,0.5);
+}
+.header a {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.voltar {
+    background: linear-gradient(90deg, #ffd700 60%, #ffb300 100%);
+    color: #222c44;
+    border: none;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 10px 6px 28px; /* largura reduzida */
+    min-width: 70px;
+    max-width: 10px;
+    box-shadow: 0 4px 16px rgba(255,215,0,0.18);
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    outline: none;
+    display: inline-block;
+}
+
+.voltar::before {
+    content: "←";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #222c44;
+    transition: color 0.2s;
+}
+
+.voltar:hover {
+    background: linear-gradient(90deg, #ffb300 0%, #ffd700 100%);
+    color: #000;
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(255,215,0,0.25);
+}
+
+.voltar:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+}

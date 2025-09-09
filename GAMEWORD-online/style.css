@@ -1,0 +1,209 @@
+/* Imagens lado a lado na barra de login */
+.container-imagens {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 8px 0;
+}
+.container-imagens img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+body {
+    background-image: url('img/5073414.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden; /* Impede barras de rolagem */
+    display: flex;
+}
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+.titulo {
+    background: rgba(255, 255, 255, 0.55); /* Fundo branco com transparência */
+    border-radius: 0px 20px 0px 20px;
+    padding: 90px;
+    max-width: 500px;
+}
+.titulo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    margin: 0;
+}
+.titulo h1 {
+    font-size: 3rem;
+    opacity: 1;
+    color:  #ffd700;
+}
+.titulo button{
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #218838;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+    transition: color 0.4s ease;
+}
+.titulo button:hover {
+    background-color: rgb(0, 255, 34);
+    color: #000000;
+}
+
+.login-bar {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.55); /* Fundo branco com transparência */
+    border-radius: 20px;
+    padding: 0px 20px 20px 20px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: 50px;
+    align-self: center;
+    justify-items: center;
+    text-align: center;
+    height: 100%;
+}
+.login-bar:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.4s ease;
+}
+.login-bar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-bar a {
+    color: #033163;
+    text-decoration: none;
+    margin-top: 5px;
+    align-self: flex-start;
+    font-size: 0.9rem;
+}
+.login-bar button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+.login-bar button:hover {
+    background-color: rgb(0, 255, 34);
+}
+.login-bar input {
+    margin: 7px 0;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.login-bar input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.login-bar h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .titulo {
+        padding: 40px;
+        max-width: 90%;
+    }
+    .titulo h1 {
+        font-size: 2rem;
+    }
+    .titulo button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+/* Estilos para telas muito pequenas */
+@media (max-width: 480px) {
+    .titulo {
+        padding: 20px;
+        max-width: 100%;
+    }
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+    .titulo button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+/* Estilos para telas muito grandes */
+@media (min-width: 1200px) {
+    .titulo {
+        padding: 120px;
+        max-width: 600px;
+    }
+    .titulo h1 {
+        font-size: 4rem;
+    }
+    .titulo button {
+        font-size: 1.5rem;
+        padding: 12px 24px;
+    }
+}
+/* Estilos para telas ultra-wide */
+@media (min-width: 1600px) {
+    .titulo {
+        padding: 150px;
+        max-width: 700px;
+    }
+    .titulo h1 {
+        font-size: 5rem;
+    }
+    .titulo button {
+        font-size: 1.8rem;
+        padding: 14px 28px;
+    }
+}
+/* Estilos para telas com altura reduzida */
+@media (max-height: 600px) {
+    .titulo {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+    .titulo button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}

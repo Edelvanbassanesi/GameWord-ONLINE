@@ -1,0 +1,162 @@
+body {
+    background: #181c2b;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #ffd700;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px #222c44;
+}
+
+#produtos {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+
+.produto {
+    background: linear-gradient(135deg, #232b45 70%, #29345a 100%);
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 4px 16px rgba(34,44,68,0.13);
+    padding: 28px 18px 22px 18px;
+    text-align: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+}
+
+.produto:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(255,215,0,0.16);
+}
+
+.produto span {
+    display: block;
+    color: #ffd700;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.produto button {
+    background: linear-gradient(90deg, #ffd700 60%, #ffb300 100%);
+    color: #222c44;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 28px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 14px;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.produto button:hover {
+    background: #222c44;
+    color: #ffd700;
+    transform: scale(1.07);
+}
+
+.carrinho {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: #222c44;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(34,44,68,0.13);
+    padding: 32px 18px 28px 18px;
+}
+
+.carrinho h2 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background: transparent;
+    margin-bottom: 18px;
+}
+
+th, td {
+    border: none;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+th {
+    background: #29345a;
+    color: #ffd700;
+    font-size: 1.08rem;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+td {
+    background: #232b45;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    font-size: 1.05rem;
+}
+
+.total {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1.25rem;
+    text-align: right;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+}
+
+.carrinho button {
+    background: linear-gradient(90deg, #ff4d4d 60%, #ffb300 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 18px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(255,77,77,0.10);
+}
+
+.carrinho button:hover {
+    background: #ffd700;
+    color: #222c44;
+    transform: scale(1.08);
+}
+
+@media (max-width: 700px) {
+    #produtos, .carrinho {
+        max-width: 98vw;
+        padding: 12px 2vw 18px 2vw;
+    }
+    th, td {
+        font-size: 0.98rem;
+        padding: 8px 4px;
+    }
+    .produto {
+        padding: 18px 8px 14px 8px;
+    }
+}

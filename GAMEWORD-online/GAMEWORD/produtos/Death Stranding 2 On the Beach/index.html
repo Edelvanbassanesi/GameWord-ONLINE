@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Death Stranding 2: On the Beach</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+   
+    <div class="produto-container">
+        <img class="produto-img" src="https://upload.wikimedia.org/wikipedia/pt/4/49/Death_Stranding_2_On_The_Beach_Poster.jpg" alt="Death Stranding 2: On the Beach">
+        <div class="produto-info">
+            <h1 class="produto-nome">Death Stranding 2: On the Beach</h1>
+            <div class="produto-descricao">
+                <p>Death Stranding 2: On the Beach é um jogo de ação desenvolvido pela Kojima Productions e publicado pela Sony Interactive Entertainment. É a sequência de <em>Death Stranding</em> e foi escrito, produzido e dirigido por Hideo Kojima. O jogo promete uma experiência cinematográfica e inovadora, explorando temas de conexão e sobrevivência em um mundo pós-apocalíptico.</p>
+            </div>
+            <h1 class="produto-nome preco-destaque">R$ 300</h1>
+            <div class="produto-botoes">
+                <button type="button">Adicionar aos Favoritos</button>
+                <button  type="button">Adicionar ao Carrinho</button>
+                <button onclick="mostrarChave()" type="button">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-container">
+        <div class="carrossel-titulo">Imagens do Jogo</div>
+        <div class="carrossel-fotos">
+            <img src="https://www.kojimaproductions.jp/sites/default/files/2025-06/dsallstar2_wallpaper_forpreview.jpg" alt="Death Stranding 2: On the Beach - Cena 1">
+            <img src="https://www.kojimaproductions.jp/sites/default/files/2025-03/image_fordiscription.jpg" alt="Death Stranding 2: On the Beach - Cena 2">
+            <img src="https://www.kojimaproductions.jp/sites/default/files/2025-06/screenshot_dhv_magellan.jpg" alt="Death Stranding 2: On the Beach - Cena 3">
+            <img src="https://www.kojimaproductions.jp/sites/default/files/2025-03/ds2_sxsw2025_screenshots001.jpg" alt="Death Stranding 2: On the Beach - Cena 4">
+            <img src="https://i.guim.co.uk/img/media/441985e42bb8c1bd03f6249b12874255e2019373/0_0_1280_720/master/1280.jpg?width=445&dpr=1&s=none&crop=none" alt="Death Stranding 2: On the Beach - Cena 5">
+            <img src="https://variety.com/wp-content/uploads/2025/06/Death-Stranding-2.png?w=1800&h=1080&crop=1" alt="Death Stranding 2: On the Beach - Cena 6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZYg0O5dHCS-1T0y-J8TWJIq7nFXVEbzDsQ&s" alt="Death Stranding 2: On the Beach - Cena 7">
+            <img src="https://cdn.awsli.com.br/2500x2500/524/524499/produto/342821351/death-stranding-2-d-qlzixbohgq.jpg" alt="Death Stranding 2: On the Beach - Cena 8">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ42MKWfF1sI6ce3G9mmdFYQq5QaXIGJ8z6IQ&s" alt="Death Stranding 2: On the Beach - Cena 9">
+        </div>
+    </div>
+    <a href="../../index.html" class="btn-voltar-alt">← Voltar</a>
+
+    <!-- Modal da chave de acesso -->
+    <div id="modal-chave" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(24,28,43,0.97); align-items:center; justify-content:center;">
+        <div style="background:#222c44; border-radius:18px; box-shadow:0 4px 24px #0008; padding:40px 32px; text-align:center; max-width:90vw;">
+            <h2 style="color:#ffd700; margin-bottom:18px;">Aqui está sua chave de acesso ao jogo</h2>
+            <div id="codigo-chave" style="font-size:2rem; color:#fff; background:#29345a; border-radius:12px; padding:18px 32px; letter-spacing:3px; font-family:monospace; margin-bottom:24px;"></div>
+            <button onclick="fecharModalChave()" style="background:#ffd700; color:#222c44; border:none; border-radius:10px; padding:10px 32px; font-weight:bold; font-size:1.1rem; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+    <script>
+    function gerarChaveAleatoria() {
+        // Exemplo: 5 blocos de 5 caracteres alfanuméricos
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        let chave = [];
+        for (let i = 0; i < 5; i++) {
+            let bloco = "";
+            for (let j = 0; j < 5; j++) {
+                bloco += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            chave.push(bloco);
+        }
+        return chave.join("-");
+    }
+
+    function mostrarChave() {
+        document.getElementById('modal-chave').style.display = 'flex';
+        document.getElementById('codigo-chave').textContent = gerarChaveAleatoria();
+    }
+
+    function fecharModalChave() {
+        document.getElementById('modal-chave').style.display = 'none';
+    }
+
+    // Torna a função mostrarChave disponível globalmente para qualquer página
+    window.mostrarChave = mostrarChave;
+    </script>
+</body>
+</html>

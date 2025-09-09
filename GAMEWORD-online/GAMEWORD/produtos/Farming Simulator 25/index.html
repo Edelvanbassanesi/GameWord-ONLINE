@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Farming Simulator 25</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../img/logo1.png" type="image/x-icon">
+</head>
+<body>
+   
+    <div class="produto-container">
+        <img class="produto-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQStK2FOQKLIxSr_VQP4a5Cfk4HZlJIuFGRhg&s" alt="Farming Simulator 25">
+        <div class="produto-info">
+            <h1 class="produto-nome">Farming Simulator 25</h1>
+            <div class="produto-descricao">
+                <p>Farming Simulator 25 é um jogo de simulação agrícola que permite aos jogadores gerenciar sua própria fazenda. Com gráficos realistas e uma jogabilidade envolvente, os jogadores podem cultivar, colher e cuidar de animais enquanto expandem suas operações agrícolas.</p>
+            </div>
+            <h1 class="produto-nome preco-destaque">R$ 200</h1>
+            <div class="produto-botoes">
+                <button type="button">Adicionar aos Favoritos</button>
+                <button  type="button">Adicionar ao Carrinho</button>
+                <button type="button" onclick="mostrarChave()">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-container">
+        <div class="carrossel-titulo">Imagens do Jogo</div>
+        <div class="carrossel-fotos">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_02c19dc812ad26eaa0315d028b962ac0380b826b.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 1">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_2782b815eccf5a7f15640d2d1b07cafe51dfbaf4.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 2">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_2e1abd0476a2c8dc282dc57088ab80657718c1a5.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 3">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_8c29a7263a2ba762c09707647dccf2e822499c7f.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 4">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_c97f4027c6b9b301b6687eb0606c721173973ca7.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 5">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_b30e3e73c537a7684177468cddf4f018d843cd8d.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 6">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_d30776b7f5b8b8d9c8a4918832bc8296383150ba.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 7">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_eea0afae5ef6eac2a8a55b6c827ae1eabe2ff924.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 8">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/ss_38c6b485cc0c2c9a4761bd1d3e185caf1699701e.600x338.jpg?t=1749803684" alt="Farming Simulator 25 - Cena 9">
+        </div>
+    </div>
+    <a href="../../index.html" class="btn-voltar-alt">← Voltar</a>
+
+    <div id="modal-chave" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(24,28,43,0.97); align-items:center; justify-content:center;">
+        <div style="background:#222c44; border-radius:18px; box-shadow:0 4px 24px #0008; padding:40px 32px; text-align:center; max-width:90vw;">
+            <h2 style="color:#ffd700; margin-bottom:18px;">Aqui está sua chave de acesso ao jogo</h2>
+            <div id="codigo-chave" style="font-size:2rem; color:#fff; background:#29345a; border-radius:12px; padding:18px 32px; letter-spacing:3px; font-family:monospace; margin-bottom:24px;"></div>
+            <button onclick="fecharModal()" style="background:#ffd700; color:#222c44; border:none; border-radius:10px; padding:10px 32px; font-weight:bold; font-size:1.1rem; cursor:pointer;">Fechar</button>
+        </div>
+    </div>
+    <script>
+        function gerarChaveAleatoria() {
+            // Exemplo de chave: 5 blocos de 5 caracteres alfanuméricos
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let chave = [];
+            for (let i = 0; i < 5; i++) {
+                let bloco = "";
+                for (let j = 0; j < 5; j++) {
+                    bloco += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                chave.push(bloco);
+            }
+            return chave.join("-");
+        }
+
+        function mostrarChave() {
+            document.getElementById('modal-chave').style.display = 'flex';
+            document.getElementById('codigo-chave').textContent = gerarChaveAleatoria();
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-chave').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
