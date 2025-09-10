@@ -17,10 +17,23 @@
             <h2 class="login-title">Login</h2>
             <input type="text" placeholder="Usuário ou E-mail" required>
             <input type="password" placeholder="Senha" required>
-            <button type="submit" class="login-btn">Entrar</button>
+            <button type="submit" onclick="entrar(event)" class="login-btn">Entrar</button>
             <a href="/GAMEWORD/login/criar conta/sua senha/index.html" class="login-link">Esqueceu a senha?</a>
             <a href="/GAMEWORD/login/criar conta/index.html" class="login-link"><h4>Criar conta</h4></a>
         </form>
     </div>
+    <script>
+        function entrar(event) {
+            event.preventDefault();
+            if (document.querySelector('.login-form input[type="text"]').value === "" || document.querySelector('.login-form input[type="password"]').value === "") {
+                alert("Por favor, preencha todos os campos.");
+            } 
+            else  {
+                alert("Login realizado com sucesso!");
+                window.location.href = "/GAMEWORD/index.html";
+            }
+            
+        };
+    </script>
 </body>
 </html>

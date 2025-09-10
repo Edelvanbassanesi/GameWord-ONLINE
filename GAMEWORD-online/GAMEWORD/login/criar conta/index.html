@@ -20,9 +20,23 @@
             <input type="text" placeholder="Usuário" required>
             <input type="password" placeholder="Senha" required>
             <input type="password" placeholder="Confirmar senha" required>
-            <button type="submit" class="login-btn">Cadastrar</button>
+            <button type="submit" onclick="entrar(event)" class="login-btn">Cadastrar</button>
             <a href="../index.html" class="login-link">Já tem conta? Fazer login</a>
         </form>
+
     </div>
+    <script>
+        function entrar(event) {
+            event.preventDefault();
+            if (document.querySelector('.login-form input[type="text"]').value === "" || document.querySelector('.login-form input[type="password"]').value === "") {
+                alert("Por favor, preencha todos os campos.");
+            } 
+            else  {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "/GAMEWORD/index.html";
+            }
+            
+        };
+    </script>
 </body>
 </html>

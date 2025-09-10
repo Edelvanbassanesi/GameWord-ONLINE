@@ -20,9 +20,21 @@
             <label for="confirm-password">Confirmar nova senha:</label>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua nova senha" required>
 
-            <button type="submit">Recuperar Senha</button>
+            <button type="submit" onclick="entrar(event)">Recuperar Senha</button>
             <button><a href="/GAMEWORD/login/index.html">Voltar</a></button>
         </form>
-        
+        <script>
+            function entrar(event) {
+                event.preventDefault();
+                if (document.querySelector('.form input[type="email"]').value === "" || document.querySelector('.form input[type="password"]').value === "") {
+                    alert("Por favor, preencha todos os campos.");
+                } 
+                else  {
+                    alert("Senha alterada com sucesso!");
+                    alert("Lembre-se de anotar sua nova senha.");
+                    window.location.href = "/GAMEWORD/index.html";
+                }
+            };
+        </script>
 </body>
 </html>
